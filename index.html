@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Self Appraisal</title>
+    <style>
+      /* General Reset */
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f9;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+          width: 100%;
+      }
+
+      /* Full-Width Container */
+      .container {
+          background-color: white;
+          width: 100%;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+          
+          align-items: center;
+      }
+
+      /* Header Section */
+      .header-container {
+          width: 100%;
+          text-align: center;
+          padding: 10px 0;
+          background-color: #48fffd;
+          color: white;
+          display: flex;
+          justify-content: center;
+      }
+
+      .logo {
+          height: 80px;
+          margin-top: 10px;
+      }
+
+      .college-name {
+          font-size: 30px;
+          font-weight: bold;
+          margin: 30px 20px;
+          color: #0920f0;
+      }
+
+      .marquee {
+  width: 80%;
+  
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee div {
+  color: #fda03c;
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: verdana;
+  padding-left: 100%;
+  display: inline-block;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+      /* Content */
+      .content {
+          margin-top: 30px;
+          font-size: 20px;
+          color: #555;
+      }
+
+      /* Button Styling */
+      .button-container {
+          display: flex;
+          justify-content: center;
+          gap: 30px;
+          margin-top: 30px;
+      }
+
+      button {
+          padding: 15px 30px;
+          background-color: #0920f0;;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s, transform 0.2s;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+          transform: scale(1.05);
+      }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header-container">
+            <img src="logo1.png" alt="College Logo" class="logo">
+            <h2 class="college-name">Gobi Arts & Science College</h2>
+        </div>
+
+        <br><br>
+
+        <div class="marquee">
+            <div>Staff Self Appraisal Form (2024 - 2025)</div>
+        </div>
+
+
+
+        <div class="content">
+         <br><br>   <p>Welcome to the Staff Self Appraisal Form. Please log in or sign up to continue.</p><br><br>
+
+            <div class="button-container">
+                <button onclick="window.location.href='student_login.html'">Student Login</button>
+                <button onclick="window.location.href='staff_login.html'">Staff Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
