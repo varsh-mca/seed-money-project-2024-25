@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+	/* General body styles */
+body {
+    background: linear-gradient(135deg, #d9d9da, #d1cbd1); /* Background gradient */
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container styles */
+.container {
+    background: skyblue; /* Separate container color */
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px; /* Set a max width for the container */
+    text-align: center; /* Center-align text inside the container */
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Header styling */
+h2 {
+    font-size: 1rem;
+    color: blue;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Form styling */
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Label styling */
+label {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Submit button styling */
+input[type="submit"].btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5b94b5, #38e4db); /* Button gradient */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(181, 91, 175, 0.6); /* Subtle shadow for glow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+input[type="submit"].btn:hover {
+    background: linear-gradient(135deg, #f582bb, #e070bb); /* Reversed gradient for hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(211, 169, 242, 0.8); /* Increased glow effect on hover */
+}
+
+/* Links styling */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #f582bb; /* Hover color */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsiveness */
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px 30px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.875rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 18px 35px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px 40px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .container {
+        padding: 22px 45px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+/* General body styles */
+body {
+    background: linear-gradient(135deg, #d9d9da, #d1cbd1); /* Background gradient */
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container styles */
+.container {
+    background: skyblue; /* Separate container color */
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px; /* Set a max width for the container */
+    text-align: center; /* Center-align text inside the container */
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Header styling */
+h2 {
+    font-size: 1rem;
+    color: blue;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Form styling */
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Label styling */
+label {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Submit button styling */
+input[type="submit"].btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5b94b5, #38e4db); /* Button gradient */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(181, 91, 175, 0.6); /* Subtle shadow for glow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+input[type="submit"].btn:hover {
+    background: linear-gradient(135deg, #f582bb, #e070bb); /* Reversed gradient for hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(211, 169, 242, 0.8); /* Increased glow effect on hover */
+}
+
+/* Links styling */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #f582bb; /* Hover color */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsiveness */
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px 30px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.875rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 18px 35px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px 40px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .container {
+        padding: 22px 45px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+/* General body styles */
+body {
+    background: linear-gradient(135deg, #d9d9da, #d1cbd1); /* Background gradient */
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container styles */
+.container {
+    background: skyblue; /* Separate container color */
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px; /* Set a max width for the container */
+    text-align: center; /* Center-align text inside the container */
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Header styling */
+h2 {
+    font-size: 1rem;
+    color: blue;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Form styling */
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Label styling */
+label {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 5px;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+/* Submit button styling */
+input[type="submit"].btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #5b94b5, #38e4db); /* Button gradient */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(181, 91, 175, 0.6); /* Subtle shadow for glow effect */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+input[type="submit"].btn:hover {
+    background: linear-gradient(135deg, #f582bb, #e070bb); /* Reversed gradient for hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(211, 169, 242, 0.8); /* Increased glow effect on hover */
+}
+
+/* Links styling */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #f582bb; /* Hover color */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media queries for responsiveness */
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px 30px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.875rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) and (max-width: 768px) {
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .container {
+        padding: 18px 35px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 20px 40px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    .container {
+        padding: 22px 45px;
+    }
+
+    label, input[type="submit"], .links a {
+        font-size: 1rem;
+    }
+}
+
+        .error {
+            color: red;
+        }
+        .btn {
+            padding: 5px 10px;
+            height:50px;
+            width:150px;
+            font-size: 0.5rem;
+            border-radius: 7px;
+            background: linear-gradient(135deg, #6b594b, #24e4b3); /* Button gradient */
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 10px rgba(181, 91, 175, 0.6); /* Subtle shadow for glow effect */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            font-weight:600;
+        }
+        .a{
+            padding: 05px 0 0 0;
+        }
+        .b{
+            padding:15px 0 0 0;
+        }
+        .links{
+            display:flex;
+            gap:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form action="student_login.php" method="post" class="login-form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="rollno">Student Roll NO.:Ex.22AA001</label>
+                <input type="text" id="rollno" name="rollno" required pattern="^\d{2}[A-Z]{2}\d{3}$" title="Format: 2 digits, 2 letters, 3 digits.EX:22AA001">
+                <div class="error" id="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Login" class="btn">
+        </form>
+        <div class="links">
+		<a class="btn b" href="student_signup.php">Register Here</a>
+            <a class="btn a" href="fp2.php">Forgot Password</a>
+            <a class="btn b" href="wall.html">Back</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+            const staffid = document.getElementById('staffid').value;
+            const errorMessage = document.getElementById('error-message');
+            const regex = /^\d{2}[A-Z]{2}\d{3}$/;
+
+            if (!regex.test(staffid)) {
+                errorMessage.textContent = "CMS ID must be in the format: 22AA001";
+                return false; // Prevent form submission
+            }
+
+            errorMessage.textContent = ""; // Clear error message
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+</html>
+
